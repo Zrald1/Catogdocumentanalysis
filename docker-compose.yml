@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: catog-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    restart: unless-stopped
+    networks:
+      - catog-network
+
+  falkordb:
+    image: falkordb/falkordb:latest
+    container_name: catog-falkordb
+    ports:
+      - "6379:6379"
+    volumes:
+      - falkordb_data:/data
+    restart: unless-stopped
+    networks:
+      - catog-network
+
+  audit-qdrant:
+    image: qdrant/qdrant:latest
+    container_name: audit-qdrant
+    ports:
+      - "6335:6333"
+      - "6336:6334"
+    volumes:
+      - audit_qdrant_data:/qdrant/storage
+    restart: unless-stopped
+    networks:
+      - catog-network
+
+  audit-falkordb:
+    image: falkordb/falkordb:latest
+    container_name: audit-falkordb
+    ports:
+      - "6380:6379"
+    volumes:
+      - audit_falkordb_data:/data
+    restart: unless-stopped
+    networks:
+      - catog-network
+
+networks:
+  catog-network:
+    driver: bridge
+
+volumes:
+  qdrant_data:
+  falkordb_data:
+  audit_qdrant_data:
+  audit_falkordb_data:

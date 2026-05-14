@@ -1,0 +1,6 @@
+{
+  "name": "CATOG INTELLIGENT ENTERPRISE SOLUTION",
+  "description": "Multi-agent AI platform for contract analysis and document compliance using Gemini and RAG-inspired intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["AI Agents", "Document Analysis", "RAG"]
+}

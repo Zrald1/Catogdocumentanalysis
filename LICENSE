@@ -1,0 +1,42 @@
+MIT License
+
+Copyright (c) 2026 CATOG Intelligent Enterprise Solution contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Third-party Acknowledgments and Usage Notice:
+
+This software incorporates or is designed to work with the following third-party open-source components, models, and services. Each remains subject to its own respective license, terms, and conditions:
+
+- LobsterTrap (MIT): Deep Prompt Inspection proxy
+- llama.cpp (MIT): LLM inference engine
+- Nomic Embed Text (Apache 2.0): Text embeddings
+- Tauri Framework (MIT/Apache 2.0): Desktop application runtime
+- React (MIT) & TypeScript (Apache 2.0): UI framework and language
+- Vite (MIT): Frontend tooling
+- FalkorDB (FalkorDB License): Knowledge Graph engine
+- Qdrant (Apache 2.0): Vector database
+- ONNX Runtime (MIT): Model acceleration
+- YOLOv11 Document Layout (Armaggheddon/HuggingFace): Pretrained vision model
+- Ultralytics YOLO (AGPL-3.0/Commercial): Object detection framework
+- Tesseract OCR v5 (Apache 2.0): Optical Character Recognition engine
+- OpenCV.js (Apache 2.0): Computer vision library
+- Google Gemini: Generative AI models and services by Google
+
+These third-party components are not relicensed by this MIT license and remain subject to their original licenses and terms of service.

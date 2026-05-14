@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss" source(none);
+@source "../index.html";
+@source "./";
+
+@theme {
+  --color-dark-grey: #0D0D0F;
+  --color-panel-bg: #161618;
+  --color-border-grey: #2A2A2C;
+  --color-neon-pink: #FF2D95;
+  --color-neon-violet: #A020F0;
+  --color-neon-yellow: #CCFF00;
+  --color-neon-cyan: #00FF88;
+  --color-neon-blue: #00D2FF;
+  --color-error-red: #FF4C4C;
+  --color-success-green: #00FF88;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  @apply bg-dark-grey text-[#F2F2F2] font-sans antialiased;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.terminal-scanline {
+  background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+  animation: scanline 8s linear infinite;
+}
+
+.grid-bg {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #2A2A2C;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #3A3A3C;
+}
+
+.panel-container {
+  @apply bg-panel-bg border border-border-grey rounded-lg overflow-hidden flex flex-col;
+}
+
+.panel-header {
+  @apply px-4 py-2.5 border-b border-border-grey text-[11px] uppercase tracking-wider text-white font-bold;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.rotating-border {
+  position: relative;
+  padding: 1px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.rotating-border::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    var(--color-neon-yellow)
+  );
+  animation: rotate 2s linear infinite;
+}
+
+.rotating-border-content {
+  @apply relative z-10 w-full h-full bg-dark-grey rounded-[5px] flex items-center justify-center;
+}
+
+@layer base {
+  .chat-markdown h1, .chat-markdown h2, .chat-markdown h3 {
+    @apply font-bold mt-2 mb-1 uppercase tracking-wider text-white;
+  }
+  .chat-markdown p {
+    @apply mb-2 last:mb-0;
+  }
+  .chat-markdown ul {
+    @apply list-disc pl-4 mb-2;
+  }
+  .chat-markdown ol {
+    @apply list-decimal pl-4 mb-2;
+  }
+  .chat-markdown li {
+    @apply mb-0.5;
+  }
+  .chat-markdown strong {
+    @apply font-black text-white;
+  }
+  .chat-markdown code {
+    @apply bg-white/10 px-1 rounded font-mono text-[10px];
+  }
+}
